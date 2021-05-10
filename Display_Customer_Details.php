@@ -11,7 +11,7 @@
 	{
 		$query = "select * from Customer_details";
 
-		$data = mysqli_query($conn,$query);
+		$data = mysqli_query($conn,$query); //connection with database
 
 		if($data)
 		{
@@ -21,6 +21,7 @@
 			echo "<table border='2px'><tr><th>ID</th><th>Name</th><th>Password</th><th>Email</th><th>Gender</th><th>Address</th><th>Country</th></tr>";
 			while( $row = mysqli_fetch_array($data) )
 			{
+				//output statement
 				echo "<tr><td>".$row["ID"]."</td><td>".$row["Name"]."</td><td>".$row["Password"]."</td><td>".$row["Email"]."</td><td>".$row["Gender"]."</td><td>".$row["Address"]."</td><td>".$row["Country"]."</td></tr>";	
 			}
 			echo "</table>";
@@ -38,5 +39,5 @@
 		echo "Not Done";
 	}
 
-	mysqli_close($conn);
+	mysqli_close($conn); //closing connection
 ?>
